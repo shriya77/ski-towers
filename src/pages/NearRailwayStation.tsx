@@ -49,6 +49,10 @@ export function NearRailwayStation() {
               <h2 className="text-xl">{t("railwayStation.landmarksHeading")}</h2>
               <p className="mt-2 leading-relaxed text-muted">{t("railwayStation.landmarksBody")}</p>
             </div>
+            <div>
+              <h2 className="text-xl">{t("railwayStation.nearbyHeading")}</h2>
+              <p className="mt-2 leading-relaxed text-muted">{t("railwayStation.nearbyBody")}</p>
+            </div>
           </div>
 
           <div className="mt-10 rounded-2xl border border-border bg-white p-6 sm:p-8">
