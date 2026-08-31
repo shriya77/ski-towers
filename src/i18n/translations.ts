@@ -24,7 +24,7 @@ export const translations = {
     hero: {
       city: "Erode",
       state: "Tamil Nadu",
-      tagline: "Affordable Monthly Rooms Near Erode Railway Station",
+      tagline: "Affordable Monthly Rooms",
       supportingLine: "Comfortable and affordable single & double occupancy rooms for students, working professionals and long-term guests.",
       nearbyLandmark: "Walkable to Erode Railway Station",
       checkAvailability: "Check Availability",
@@ -214,7 +214,7 @@ export const translations = {
     hero: {
       city: "ஈரோடு",
       state: "தமிழ்நாடு",
-      tagline: "ஈரோடு ரயில் நிலையம் அருகில் மலிவான மாத தங்குமிடம்",
+      tagline: "மலிவான மாத தங்குமிடம்",
       supportingLine: "மாணவர்கள், வேலைக்குச் செல்பவர்கள் மற்றும் நீண்ட நாள் தங்குபவர்களுக்கு வசதியான, மலிவான சிங்கிள் & டபுள் ரூம்கள்.",
       nearbyLandmark: "ஈரோடு ரயில் நிலையத்திற்கு நடந்தே செல்லலாம்",
       checkAvailability: "இருப்பு உள்ளதா பாருங்கள்",
@@ -404,7 +404,7 @@ export const translations = {
     hero: {
       city: "इरोड",
       state: "तमिल नाडु",
-      tagline: "इरोड रेलवे स्टेशन के पास किफ़ायती मासिक कमरे",
+      tagline: "किफ़ायती मासिक कमरे",
       supportingLine: "स्टूडेंट्स, वर्किंग प्रोफेशनल्स और लंबे समय तक रहने वालों के लिए आरामदायक, किफ़ायती सिंगल और डबल कमरे।",
       nearbyLandmark: "इरोड रेलवे स्टेशन पैदल दूरी पर",
       checkAvailability: "अवेलेबिलिटी चेक करें",
