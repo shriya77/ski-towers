@@ -1,4 +1,5 @@
 import { usePageMeta } from "../hooks/usePageMeta";
+import { useLanguage } from "../i18n/LanguageContext";
 import { PageHeader } from "../components/PageHeader";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
@@ -7,6 +8,8 @@ import { AvailabilityChecker } from "../components/AvailabilityChecker";
 import { rooms } from "../data/rooms";
 
 export function Rooms() {
+  const { t } = useLanguage();
+
   usePageMeta(
     "Rooms & Rates | Ski Towers Erode",
     "Single and double rooms at Ski Towers Erode, available for daily, weekly and monthly stays. View rates and book on WhatsApp."
@@ -15,9 +18,9 @@ export function Rooms() {
   return (
     <>
       <PageHeader
-        eyebrow="Rooms & Rates"
-        title="Rooms & Rates"
-        description="Single and double rooms available for daily, weekly and monthly stays."
+        eyebrow={t("rooms.eyebrow")}
+        title={t("rooms.pageTitle")}
+        description={t("rooms.pageDescription")}
       />
 
       <section className="py-16 sm:py-20">

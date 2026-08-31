@@ -41,9 +41,9 @@ export function Home() {
       <LocationSection />
       <GoogleReviews />
       <ContactSection
-        eyebrow="Contact"
-        title="Looking for a room?"
-        description="Get in touch with Ski Towers Erode and we'll help you find the right stay."
+        eyebrowKey="contact.eyebrow"
+        titleKey="contact.homeCtaTitle"
+        descriptionKey="contact.homeCtaDescription"
       />
     </>
   );

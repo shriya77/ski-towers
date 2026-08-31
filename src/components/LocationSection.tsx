@@ -1,11 +1,13 @@
 import { MapPin, Navigation } from "lucide-react";
 import { business } from "../data/business";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
 import { Button } from "./ui/Button";
 
 export function LocationSection() {
+  const { t } = useLanguage();
   const hasMapsUrl = Boolean(business.mapsUrl);
   const hasEmbed = Boolean(business.mapsEmbedUrl);
   const hasAddress = Boolean(business.addressLine1 && !business.addressLine1.startsWith("["));
@@ -14,7 +16,7 @@ export function LocationSection() {
     <section id="location" className="py-20 sm:py-28">
       <Container>
         <Reveal>
-          <SectionHeading eyebrow="Find Us" title="Find Ski Towers Erode" />
+          <SectionHeading eyebrow={t("location.eyebrow")} title={t("location.title")} />
         </Reveal>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-10">
@@ -40,11 +42,13 @@ export function LocationSection() {
                     {business.pincode && !business.pincode.startsWith("[") ? ` — ${business.pincode}` : ""}
                   </>
                 ) : (
-                  <>Full address coming soon. {business.city}, {business.state}.</>
+                  <>
+                    {t("location.addressComingSoon")} {business.city}, {business.state}.
+                  </>
                 )}
               </address>
 
-              <p className="mt-3 text-sm font-medium text-accent">{business.nearbyLandmark}</p>
+              <p className="mt-3 text-sm font-medium text-accent">{t("hero.nearbyLandmark")}</p>
 
               {hasMapsUrl && (
                 <Button
@@ -54,7 +58,7 @@ export function LocationSection() {
                   className="mt-6 self-start"
                 >
                   <Navigation className="h-4 w-4" />
-                  Get Directions
+                  {t("location.getDirections")}
                 </Button>
               )}
             </div>
@@ -73,7 +77,7 @@ export function LocationSection() {
               ) : (
                 <div className="flex h-full flex-col items-center justify-center gap-2 p-8 text-center text-muted">
                   <MapPin className="h-7 w-7 opacity-50" strokeWidth={1.5} />
-                  <p className="text-sm">Map will appear here once the location is confirmed.</p>
+                  <p className="text-sm">{t("location.mapComingSoon")}</p>
                 </div>
               )}
             </div>

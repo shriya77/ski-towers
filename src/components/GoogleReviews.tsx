@@ -1,6 +1,7 @@
 import { Star, ExternalLink, Quote } from "lucide-react";
 import { business } from "../data/business";
 import { testimonials } from "../data/testimonials";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
@@ -13,6 +14,7 @@ import { Button } from "./ui/Button";
  * testimonial is set — never shows placeholder or fabricated reviews.
  */
 export function GoogleReviews() {
+  const { t } = useLanguage();
   const hasUrl = Boolean(business.googleReviewUrl);
   const hasRating = business.googleRating !== null;
   const hasTestimonials = testimonials.length > 0;
@@ -23,7 +25,7 @@ export function GoogleReviews() {
     <section className="bg-ivory-soft py-20 sm:py-28">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
-          <SectionHeading eyebrow="Reviews" title="What guests say on Google" align="center" />
+          <SectionHeading eyebrow={t("reviews.eyebrow")} title={t("reviews.title")} align="center" />
 
           {hasRating && (
             <div className="mt-5 flex flex-col items-center gap-1.5">
@@ -43,7 +45,9 @@ export function GoogleReviews() {
                 </div>
               </div>
               {business.googleReviewCount !== null && (
-                <p className="text-sm text-muted">Based on {business.googleReviewCount} Google reviews</p>
+                <p className="text-sm text-muted">
+                  {t("reviews.basedOn", { count: business.googleReviewCount })}
+                </p>
               )}
             </div>
           )}
@@ -51,14 +55,14 @@ export function GoogleReviews() {
 
         {hasTestimonials && (
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 80}>
+            {testimonials.map((testimonial, i) => (
+              <Reveal key={testimonial.name} delay={i * 80}>
                 <div className="flex h-full flex-col items-start gap-3 rounded-2xl border border-border bg-white p-6 text-left">
                   <Quote className="h-5 w-5 text-accent/60" fill="currentColor" strokeWidth={0} />
-                  <p className="text-sm leading-relaxed text-charcoal-soft">&ldquo;{t.quote}&rdquo;</p>
+                  <p className="text-sm leading-relaxed text-charcoal-soft">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="mt-auto flex items-center gap-1.5 pt-2 text-xs text-muted">
-                    <span className="font-semibold text-charcoal">{t.name}</span>
-                    <span>· Google review</span>
+                    <span className="font-semibold text-charcoal">{testimonial.name}</span>
+                    <span>· {t("reviews.googleReview")}</span>
                   </div>
                 </div>
               </Reveal>
@@ -69,7 +73,7 @@ export function GoogleReviews() {
         {hasUrl && (
           <Reveal className="mt-8 flex justify-center" delay={hasTestimonials ? 240 : 0}>
             <Button href={business.googleReviewUrl} target="_blank" rel="noopener noreferrer">
-              Read Reviews on Google
+              {t("reviews.readOnGoogle")}
               <ExternalLink className="h-4 w-4" />
             </Button>
           </Reveal>

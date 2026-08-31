@@ -1,4 +1,5 @@
 import { cn } from "../../lib/utils";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 /**
  * Branded stand-in used wherever a real photo hasn't been supplied yet —
@@ -16,11 +17,14 @@ export function PlaceholderImage({
   className?: string;
   compact?: boolean;
 }) {
+  const { t } = useLanguage();
+  const comingSoon = t("common.photoComingSoon");
+
   return (
     <div
       className={cn("bg-mesh bg-grain relative flex h-full w-full items-center justify-center", className)}
       role="img"
-      aria-label={label ? `${label} — photo coming soon` : "Photo coming soon"}
+      aria-label={label ? `${label} — ${comingSoon}` : comingSoon}
     >
       <div className="relative flex flex-col items-center gap-2.5">
         <span
@@ -35,7 +39,7 @@ export function PlaceholderImage({
         </span>
         {!compact && (
           <span className="px-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-ivory/50">
-            Photo coming soon
+            {comingSoon}
           </span>
         )}
       </div>

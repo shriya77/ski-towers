@@ -2,6 +2,7 @@ import { Store } from "lucide-react";
 import { shops } from "../data/shops";
 import { business } from "../data/business";
 import { generateWhatsAppLink, isWhatsAppConfigured } from "../lib/whatsapp";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
@@ -9,16 +10,17 @@ import { Button } from "./ui/Button";
 import { ShopCard } from "./ShopCard";
 
 export function ShopSection() {
-  const whatsappLink = generateWhatsAppLink();
+  const { language, t } = useLanguage();
+  const whatsappLink = generateWhatsAppLink({}, language);
 
   return (
     <section id="shops" className="bg-ivory-soft py-20 sm:py-28">
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Commercial Spaces"
-            title="Looking for a shop in Erode?"
-            description={`Explore available commercial spaces at ${business.name}, or message us to ask what's open.`}
+            eyebrow={t("shops.eyebrow")}
+            title={t("shops.title")}
+            description={t("shops.description", { business: business.name })}
           />
         </Reveal>
 
@@ -29,15 +31,14 @@ export function ShopSection() {
                 <Store className="h-6 w-6" strokeWidth={1.75} />
               </span>
               <p className="max-w-sm text-sm text-muted">
-                Shop listings will appear here as they become available. In the meantime, message us
-                on WhatsApp to ask about commercial space at {business.name}.
+                {t("shops.emptyState", { business: business.name })}
               </p>
               {isWhatsAppConfigured ? (
                 <Button href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  Enquire on WhatsApp
+                  {t("shops.enquireWhatsapp")}
                 </Button>
               ) : (
-                <Button href="/contact">Contact Us</Button>
+                <Button href="/contact">{t("nav.contactUs")}</Button>
               )}
             </div>
           </Reveal>

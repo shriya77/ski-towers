@@ -11,27 +11,30 @@ import {
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
-
-const FEATURES = [
-  { icon: TrainFront, label: "Near Erode Railway Station" },
-  { icon: Users, label: "Single & Double Occupancy" },
-  { icon: BedSingle, label: "Cot & Mattress Provided" },
-  { icon: Droplets, label: "24-Hour Hot Water" },
-  { icon: ShieldCheck, label: "Clean & Safe Environment" },
-  { icon: IndianRupee, label: "Affordable Monthly Rent" },
-  { icon: Briefcase, label: "Suitable for Working Professionals & Students" },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function FeatureChecklist() {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: TrainFront, label: t("features.nearStation") },
+    { icon: Users, label: t("features.occupancy") },
+    { icon: BedSingle, label: t("features.cotMattress") },
+    { icon: Droplets, label: t("features.hotWater") },
+    { icon: ShieldCheck, label: t("features.safe") },
+    { icon: IndianRupee, label: t("features.affordable") },
+    { icon: Briefcase, label: t("features.suitableFor") },
+  ];
+
   return (
     <section className="bg-ivory-soft py-20 sm:py-28">
       <Container>
         <Reveal>
-          <SectionHeading eyebrow="Why Ski Towers" title="Why guests choose us" />
+          <SectionHeading eyebrow={t("features.eyebrow")} title={t("features.title")} />
         </Reveal>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2">
-          {FEATURES.map(({ icon: Icon, label }, i) => (
+          {features.map(({ icon: Icon, label }, i) => (
             <Reveal key={label} delay={i * 40}>
               <div className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3.5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent">

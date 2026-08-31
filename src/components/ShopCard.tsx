@@ -2,12 +2,15 @@ import { MessageCircle } from "lucide-react";
 import type { Shop } from "../types";
 import { formatPrice } from "../lib/utils";
 import { generateShopWhatsAppLink, isWhatsAppConfigured } from "../lib/whatsapp";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Button } from "./ui/Button";
 import { PlaceholderImage } from "./ui/PlaceholderImage";
 
 export function ShopCard({ shop }: { shop: Shop }) {
-  const whatsappLink = generateShopWhatsAppLink(shop.name);
+  const { language, t } = useLanguage();
+  const whatsappLink = generateShopWhatsAppLink(shop.name, language);
   const image = shop.images[0];
+  const rent = formatPrice(shop.monthlyRent);
 
   return (
     <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-charcoal/10">
@@ -34,7 +37,7 @@ export function ShopCard({ shop }: { shop: Shop }) {
                 : "shrink-0 rounded-full bg-charcoal/5 px-3 py-1 text-xs font-semibold text-muted"
             }
           >
-            {shop.available ? "Available" : "Currently unavailable"}
+            {shop.available ? t("shops.available") : t("shops.unavailable")}
           </span>
         </div>
 
@@ -43,19 +46,19 @@ export function ShopCard({ shop }: { shop: Shop }) {
         <div className="mt-4 space-y-1.5 border-t border-border pt-4 text-sm">
           {shop.size && (
             <div className="flex justify-between">
-              <span className="text-muted">Size</span>
+              <span className="text-muted">{t("shops.size")}</span>
               <span className="font-medium text-charcoal-soft">{shop.size}</span>
             </div>
           )}
           {shop.floor && (
             <div className="flex justify-between">
-              <span className="text-muted">Floor</span>
+              <span className="text-muted">{t("shops.floor")}</span>
               <span className="font-medium text-charcoal-soft">{shop.floor}</span>
             </div>
           )}
           <div className="flex justify-between">
-            <span className="text-muted">Monthly Rent</span>
-            <span className="font-bold text-charcoal">{formatPrice(shop.monthlyRent)}</span>
+            <span className="text-muted">{t("shops.monthlyRent")}</span>
+            <span className="font-bold text-charcoal">{rent ?? t("rooms.contactForRate")}</span>
           </div>
         </div>
 
@@ -63,11 +66,11 @@ export function ShopCard({ shop }: { shop: Shop }) {
           {isWhatsAppConfigured ? (
             <Button href={whatsappLink} target="_blank" rel="noopener noreferrer" size="md" className="w-full">
               <MessageCircle className="h-4 w-4" />
-              Enquire on WhatsApp
+              {t("shops.enquireWhatsapp")}
             </Button>
           ) : (
             <Button href="/contact" size="md" className="w-full">
-              Enquire Now
+              {t("shops.enquireNow")}
             </Button>
           )}
         </div>

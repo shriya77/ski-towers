@@ -1,18 +1,21 @@
 import { rooms } from "../data/rooms";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Container } from "./ui/Container";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
 import { RoomCard } from "./RoomCard";
 
 export function RoomSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="rooms" className="py-20 sm:py-28">
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Rooms & Rates"
-            title="Choose a single or double room"
-            description="Simple, comfortable rooms for daily, weekly and monthly stays. Message us on WhatsApp to check availability."
+            eyebrow={t("rooms.eyebrow")}
+            title={t("rooms.title")}
+            description={t("rooms.description")}
           />
         </Reveal>
 

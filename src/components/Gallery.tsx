@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight, ImageOff } from "lucide-react";
 import type { GalleryCategory, GalleryImage } from "../types";
 import { galleryImages } from "../data/gallery";
-import { PlaceholderImage } from "./ui/PlaceholderImage";
+import { useLanguage } from "../i18n/LanguageContext";
 import { cn } from "../lib/utils";
 
 const CATEGORIES: GalleryCategory[] = [
@@ -14,7 +14,17 @@ const CATEGORIES: GalleryCategory[] = [
   "Shops",
 ];
 
+const CATEGORY_KEY: Record<GalleryCategory, string> = {
+  All: "gallery.categoryAll",
+  Rooms: "gallery.categoryRooms",
+  Exterior: "gallery.categoryExterior",
+  Bathrooms: "gallery.categoryBathrooms",
+  "Common Areas": "gallery.categoryCommonAreas",
+  Shops: "gallery.categoryShops",
+};
+
 export function Gallery() {
+  const { t } = useLanguage();
   const [active, setActive] = useState<GalleryCategory>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -53,7 +63,7 @@ export function Gallery() {
                 : "bg-white text-charcoal-soft ring-1 ring-inset ring-border hover:ring-accent/40"
             )}
           >
-            {cat}
+            {t(CATEGORY_KEY[cat])}
           </button>
         ))}
       </div>
@@ -61,9 +71,7 @@ export function Gallery() {
       {filtered.length === 0 ? (
         <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-white py-16 text-center">
           <ImageOff className="h-8 w-8 text-muted" strokeWidth={1.5} />
-          <p className="text-sm text-muted">
-            Photos for this category are coming soon.
-          </p>
+          <p className="text-sm text-muted">{t("gallery.comingSoon")}</p>
         </div>
       ) : (
         <div className="mt-8 columns-2 gap-4 sm:columns-3 [&>*]:mb-4">
@@ -138,19 +146,6 @@ export function Gallery() {
           />
         </div>
       )}
-    </div>
-  );
-}
-
-export function GalleryPreviewPlaceholder() {
-  const labels = ["Rooms", "Exterior", "Bathrooms", "Common Areas"];
-  return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-      {labels.map((label) => (
-        <div key={label} className="aspect-square overflow-hidden rounded-xl">
-          <PlaceholderImage label={label} compact />
-        </div>
-      ))}
     </div>
   );
 }

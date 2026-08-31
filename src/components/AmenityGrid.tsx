@@ -1,5 +1,6 @@
 import type { Amenity } from "../types";
 import { cn } from "../lib/utils";
+import { useLanguage, useLocalized } from "../i18n/LanguageContext";
 
 export function AmenityGrid({ amenities }: { amenities: Amenity[] }) {
   const visible = amenities.filter((a) => a.enabled || a.comingSoon);
@@ -8,13 +9,15 @@ export function AmenityGrid({ amenities }: { amenities: Amenity[] }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
       {visible.map((amenity) => (
-        <AmenityItem key={amenity.name} amenity={amenity} />
+        <AmenityItem key={amenity.id} amenity={amenity} />
       ))}
     </div>
   );
 }
 
 export function AmenityItem({ amenity }: { amenity: Amenity }) {
+  const { t } = useLanguage();
+  const name = useLocalized(amenity.name);
   const Icon = amenity.icon;
   const isComingSoon = !amenity.enabled && amenity.comingSoon;
 
@@ -34,8 +37,8 @@ export function AmenityItem({ amenity }: { amenity: Amenity }) {
         <Icon className="h-4 w-4" strokeWidth={1.75} />
       </span>
       <span className="text-sm font-medium text-charcoal-soft">
-        {amenity.name}
-        {isComingSoon && <span className="block text-xs font-normal text-muted">Coming soon</span>}
+        {name}
+        {isComingSoon && <span className="block text-xs font-normal text-muted">{t("amenities.comingSoon")}</span>}
       </span>
     </div>
   );

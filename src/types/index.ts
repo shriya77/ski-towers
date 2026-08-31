@@ -1,7 +1,10 @@
 import type { LucideIcon } from "lucide-react";
+import type { Localized } from "../i18n/types";
 
 export interface Amenity {
-  name: string;
+  /** Stable id used as the translation key (see i18n/translations amenity map) — not shown directly. */
+  id: string;
+  name: Localized;
   icon: LucideIcon;
   enabled: boolean;
   /** Shown in the amenities list, dimmed with a "Coming soon" label, without claiming it's available yet. */
@@ -15,11 +18,11 @@ export interface RoomImage {
 
 export interface Room {
   id: string;
-  name: string;
-  shortDescription: string;
-  description: string;
-  beds: string;
-  suitableFor: string | null;
+  name: Localized;
+  shortDescription: Localized;
+  description: Localized;
+  beds: Localized;
+  suitableFor: Localized | null;
   dailyRate: number | null;
   weeklyRate: number | null;
   monthlyRate: number | null;

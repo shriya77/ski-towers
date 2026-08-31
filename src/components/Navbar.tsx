@@ -3,20 +3,23 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { generateWhatsAppLink, isWhatsAppConfigured } from "../lib/whatsapp";
 import { cn } from "../lib/utils";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Button } from "./ui/Button";
-
-const NAV_LINKS = [
-  { label: "Rooms", to: "/rooms" },
-  { label: "Shops", to: "/shops" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Location", to: "/#location" },
-  { label: "Contact", to: "/contact" },
-];
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { language, t } = useLanguage();
+
+  const NAV_LINKS = [
+    { label: t("nav.rooms"), to: "/rooms" },
+    { label: t("nav.shops"), to: "/shops" },
+    { label: t("nav.gallery"), to: "/gallery" },
+    { label: t("nav.location"), to: "/#location" },
+    { label: t("nav.contact"), to: "/contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -37,7 +40,7 @@ export function Navbar() {
     };
   }, [open]);
 
-  const whatsappLink = generateWhatsAppLink();
+  const whatsappLink = generateWhatsAppLink({}, language);
   const isHome = location.pathname === "/";
   const transparent = isHome && !scrolled && !open;
 
@@ -75,7 +78,7 @@ export function Navbar() {
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <NavLink
-              key={link.label}
+              key={link.to}
               to={link.to}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-accent",
@@ -87,31 +90,35 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <LanguageToggle light={transparent} />
           {isWhatsAppConfigured ? (
             <Button href={whatsappLink} target="_blank" rel="noopener noreferrer" size="md">
               <MessageCircle className="h-4 w-4" />
-              WhatsApp Us
+              {t("nav.whatsappUs")}
             </Button>
           ) : (
             <Button href="/contact" size="md">
-              Contact Us
+              {t("nav.contactUs")}
             </Button>
           )}
         </div>
 
-        <button
-          type="button"
-          className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-full transition-colors md:hidden",
-            !transparent ? "text-charcoal" : "text-white"
-          )}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <LanguageToggle light={transparent} />
+          <button
+            type="button"
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+              !transparent ? "text-charcoal" : "text-white"
+            )}
+            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <div
@@ -123,7 +130,7 @@ export function Navbar() {
         <nav className="flex flex-col gap-1 px-5 pb-5 pt-1">
           {NAV_LINKS.map((link) => (
             <NavLink
-              key={link.label}
+              key={link.to}
               to={link.to}
               className="rounded-lg px-3 py-3 text-base font-medium text-charcoal-soft transition-colors hover:bg-ivory-soft hover:text-accent"
             >
@@ -140,11 +147,11 @@ export function Navbar() {
                 size="md"
               >
                 <MessageCircle className="h-4 w-4" />
-                WhatsApp Us
+                {t("nav.whatsappUs")}
               </Button>
             ) : (
               <Button href="/contact" className="w-full" size="md">
-                Contact Us
+                {t("nav.contactUs")}
               </Button>
             )}
           </div>
