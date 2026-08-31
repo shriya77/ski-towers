@@ -20,8 +20,12 @@ export function Footer() {
     { label: t("nav.shops"), to: "/shops" },
     { label: t("nav.gallery"), to: "/gallery" },
     { label: t("nav.location"), to: "/#location" },
+    { label: t("railwayStation.breadcrumbLabel"), to: "/near-erode-railway-station" },
+    { label: t("studentsProfessionals.breadcrumbLabel"), to: "/students-professionals" },
     { label: t("nav.contact"), to: "/contact" },
   ];
+
+  const hasAddress = Boolean(business.addressLine1 && !business.addressLine1.startsWith("["));
 
   return (
     <footer className="border-t border-border bg-charcoal text-ivory/80">
@@ -30,6 +34,13 @@ export function Footer() {
           <div>
             <p className="text-lg font-extrabold tracking-tight text-white">SKI TOWERS ERODE</p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-ivory/60">{t("footer.tagline")}</p>
+            {hasAddress && (
+              <address className="mt-3 max-w-xs text-sm not-italic leading-relaxed text-ivory/60">
+                {business.addressLine1}, {business.addressLine2}
+                <br />
+                {business.city}, {business.state} {business.pincode}
+              </address>
+            )}
           </div>
 
           <div>

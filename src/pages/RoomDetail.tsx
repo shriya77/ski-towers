@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, MessageCircle, Users } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
+import { MessageCircle, Users } from "lucide-react";
 import { getRoomById } from "../data/rooms";
-import { usePageMeta } from "../hooks/usePageMeta";
+import { useSEO } from "../hooks/useSEO";
 import { formatPrice } from "../lib/utils";
 import { generateWhatsAppLink, isWhatsAppConfigured } from "../lib/whatsapp";
+import { buildBreadcrumbSchema } from "../lib/seo";
 import { useLanguage, useLocalized } from "../i18n/LanguageContext";
 import { EMPTY_LOCALIZED } from "../i18n/types";
 import { Container } from "../components/ui/Container";
@@ -13,6 +14,7 @@ import { Reveal } from "../components/ui/Reveal";
 import { PlaceholderImage } from "../components/ui/PlaceholderImage";
 import { AmenityGrid } from "../components/AmenityGrid";
 import { AvailabilityChecker } from "../components/AvailabilityChecker";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 
 export function RoomDetail() {
   const { roomId } = useParams();
@@ -24,11 +26,27 @@ export function RoomDetail() {
   const description = useLocalized(room?.description ?? EMPTY_LOCALIZED);
   const beds = useLocalized(room?.beds ?? EMPTY_LOCALIZED);
   const suitableForText = useLocalized(room?.suitableFor ?? EMPTY_LOCALIZED);
+  const seoTitle = useLocalized(room?.seo.title ?? EMPTY_LOCALIZED);
+  const seoDescription = useLocalized(room?.seo.description ?? EMPTY_LOCALIZED);
+  const seoHeading = useLocalized(room?.seo.heading ?? EMPTY_LOCALIZED);
 
-  usePageMeta(
-    room ? `${name} | Ski Towers Erode` : "Room | Ski Towers Erode",
-    room ? `${description} View rates and book on WhatsApp.` : undefined
+  const jsonLd = useMemo(
+    () =>
+      room
+        ? buildBreadcrumbSchema([
+            { name: t("nav.rooms"), path: "/rooms" },
+            { name, path: `/rooms/${room.id}` },
+          ])
+        : undefined,
+    [room, name, t]
   );
+
+  useSEO({
+    title: room ? `${seoTitle}` : "Room | SKI Towers",
+    description: room ? seoDescription : "",
+    path: room ? `/rooms/${room.id}` : "/rooms",
+    jsonLd,
+  });
 
   if (!room) return <Navigate to="/rooms" replace />;
 
@@ -38,19 +56,9 @@ export function RoomDetail() {
 
   return (
     <>
-      <section className="pt-24 sm:pt-28">
-        <Container>
-          <Link
-            to="/rooms"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {t("rooms.backToRooms")}
-          </Link>
-        </Container>
-      </section>
+      <Breadcrumbs items={[{ label: t("nav.rooms"), path: "/rooms" }, { label: name }]} />
 
-      <section className="pb-16 pt-6 sm:pb-20">
+      <section className="pb-16 pt-10 sm:pb-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
             <Reveal>
@@ -85,7 +93,8 @@ export function RoomDetail() {
             </Reveal>
 
             <Reveal delay={80}>
-              <h1 className="text-3xl sm:text-4xl">{name}</h1>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">{name}</p>
+              <h1 className="mt-1 text-3xl sm:text-4xl">{seoHeading}</h1>
               <div className="mt-2 flex items-center gap-4 text-sm text-charcoal-soft">
                 <span>{beds}</span>
                 {suitableFor && (

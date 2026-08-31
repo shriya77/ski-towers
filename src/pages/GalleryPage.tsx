@@ -1,5 +1,5 @@
-import { usePageMeta } from "../hooks/usePageMeta";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSEO } from "../hooks/useSEO";
 import { PageHeader } from "../components/PageHeader";
 import { Container } from "../components/ui/Container";
 import { Gallery } from "../components/Gallery";
@@ -7,10 +7,11 @@ import { Gallery } from "../components/Gallery";
 export function GalleryPage() {
   const { t } = useLanguage();
 
-  usePageMeta(
-    "Gallery | Ski Towers Erode",
-    "Photos of rooms, exterior and common areas at Ski Towers Erode."
-  );
+  useSEO({
+    title: `${t("gallery.pageTitle")} | SKI Towers`,
+    description: t("gallery.pageDescription"),
+    path: "/gallery",
+  });
 
   return (
     <>

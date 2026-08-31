@@ -33,19 +33,19 @@ export function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
+          <Button href="#rooms" size="lg">
+            {t("hero.checkAvailability")}
+          </Button>
           {isWhatsAppConfigured ? (
-            <Button href={whatsappLink} target="_blank" rel="noopener noreferrer" size="lg">
+            <Button href={whatsappLink} target="_blank" rel="noopener noreferrer" variant="outlineLight" size="lg">
               <MessageCircle className="h-5 w-5" />
-              {t("hero.bookOnWhatsapp")}
+              {t("nav.whatsappUs")}
             </Button>
           ) : (
-            <Button href="/contact" size="lg">
+            <Button href="/contact" variant="outlineLight" size="lg">
               {t("nav.contactUs")}
             </Button>
           )}
-          <Button href="/rooms" variant="outlineLight" size="lg">
-            {t("hero.exploreRooms")}
-          </Button>
         </div>
       </div>
 

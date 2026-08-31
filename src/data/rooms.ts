@@ -7,6 +7,8 @@ import type { Room } from "../types";
  * Set a rate to `null` to show "Contact for rate" instead of a fake price.
  * Name/description fields are Localized (en/ta/hi) — update all three when
  * you change the English copy so the site stays consistent across languages.
+ * `seo` holds longer, keyword-aware copy for the room detail page's <title>,
+ * meta description and H1 — kept separate from `name` so cards/UI stay short.
  */
 export const rooms: Room[] = [
   {
@@ -27,6 +29,23 @@ export const rooms: Room[] = [
     dailyRate: null,
     weeklyRate: null,
     monthlyRate: 4000,
+    seo: {
+      title: {
+        en: "Single Rooms for Rent in Erode | SKI Towers",
+        ta: "ஈரோட்டில் சிங்கிள் ரூம் வாடகைக்கு | SKI Towers",
+        hi: "इरोड में सिंगल रूम किराए पर | SKI Towers",
+      },
+      description: {
+        en: "Looking for an affordable single room in Erode? Explore monthly single occupancy rooms at SKI Towers near Erode Railway Station.",
+        ta: "ஈரோட்டில் மலிவான சிங்கிள் ரூம் தேடுகிறீர்களா? ஈரோடு ரயில் நிலையம் அருகில் ஸ்கி டவர்ஸில் மாத சிங்கிள் ரூம்களைப் பாருங்கள்.",
+        hi: "इरोड में किफ़ायती सिंगल रूम चाहिए? इरोड रेलवे स्टेशन के पास स्की टावर्स में मासिक सिंगल कमरे देखें।",
+      },
+      heading: {
+        en: "Affordable Single Rooms for Monthly Rent in Erode",
+        ta: "ஈரோட்டில் மாத வாடகைக்கு மலிவான சிங்கிள் ரூம்கள்",
+        hi: "इरोड में मासिक किराए के लिए किफ़ायती सिंगल रूम",
+      },
+    },
     amenities: [
       { id: "wifi", name: { en: "Wi-Fi", ta: "வைஃபை", hi: "वाई-फाई" }, icon: Wifi, enabled: true },
       {
@@ -59,10 +78,22 @@ export const rooms: Room[] = [
       },
     ],
     images: [
-      { src: "/photos/room-single-1.jpeg", alt: "Single room at Ski Towers Erode with seating and window" },
-      { src: "/photos/room-single-2.jpeg", alt: "Single bed in a room at Ski Towers Erode" },
-      { src: "/photos/room-single-3.jpeg", alt: "Storage cupboard in a single room at Ski Towers Erode" },
-      { src: "/photos/room-single-4.jpeg", alt: "Bedding in a single room at Ski Towers Erode" },
+      {
+        src: "/photos/ski-towers-single-room-erode.jpeg",
+        alt: "Single occupancy monthly room at SKI Towers in Erode, with seating area and window",
+      },
+      {
+        src: "/photos/ski-towers-single-room-bed-erode.jpeg",
+        alt: "Bed in a single room at SKI Towers, Erode",
+      },
+      {
+        src: "/photos/ski-towers-single-room-storage-erode.jpeg",
+        alt: "Storage cupboard in a single room at SKI Towers, Erode",
+      },
+      {
+        src: "/photos/ski-towers-single-room-bedding-erode.jpeg",
+        alt: "Bedding and linen in a single room at SKI Towers, Erode",
+      },
     ],
   },
   {
@@ -83,6 +114,23 @@ export const rooms: Room[] = [
     dailyRate: null,
     weeklyRate: null,
     monthlyRate: 5000,
+    seo: {
+      title: {
+        en: "Double Rooms for Rent in Erode | SKI Towers",
+        ta: "ஈரோட்டில் டபுள் ரூம் வாடகைக்கு | SKI Towers",
+        hi: "इरोड में डबल रूम किराए पर | SKI Towers",
+      },
+      description: {
+        en: "Find affordable double occupancy rooms in Erode at SKI Towers. Convenient monthly accommodation near Erode Railway Station.",
+        ta: "ஈரோட்டில் மலிவான டபுள் ரூம் தேடுகிறீர்களா? ஈரோடு ரயில் நிலையம் அருகில் ஸ்கி டவர்ஸில் வசதியான மாத தங்குமிடம்.",
+        hi: "इरोड में किफ़ायती डबल रूम चाहिए? इरोड रेलवे स्टेशन के पास स्की टावर्स में आरामदायक मासिक एकोमोडेशन।",
+      },
+      heading: {
+        en: "Affordable Double Rooms for Monthly Rent in Erode",
+        ta: "ஈரோட்டில் மாத வாடகைக்கு மலிவான டபுள் ரூம்கள்",
+        hi: "इरोड में मासिक किराए के लिए किफ़ायती डबल रूम",
+      },
+    },
     amenities: [
       { id: "wifi", name: { en: "Wi-Fi", ta: "வைஃபை", hi: "वाई-फाई" }, icon: Wifi, enabled: true },
       {
@@ -114,7 +162,12 @@ export const rooms: Room[] = [
         comingSoon: true,
       },
     ],
-    images: [{ src: "/photos/room-double-1.jpeg", alt: "Double bed in a room at Ski Towers Erode" }],
+    images: [
+      {
+        src: "/photos/ski-towers-double-room-erode.jpeg",
+        alt: "Double occupancy room at SKI Towers in Erode",
+      },
+    ],
   },
 ];
 

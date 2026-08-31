@@ -6,13 +6,49 @@ import type { GalleryImage } from "../types";
  * tasteful placeholders per category instead of stock photography.
  */
 export const galleryImages: GalleryImage[] = [
-  { src: "/photos/room-single-1.jpeg", alt: "Single room with seating and window", category: "Rooms" },
-  { src: "/photos/room-single-2.jpeg", alt: "Single bed in a room at Ski Towers Erode", category: "Rooms" },
-  { src: "/photos/room-single-3.jpeg", alt: "Storage cupboard in a single room", category: "Rooms" },
-  { src: "/photos/room-single-4.jpeg", alt: "Bedding in a single room", category: "Rooms" },
-  { src: "/photos/room-double-1.jpeg", alt: "Double bed in a room at Ski Towers Erode", category: "Rooms" },
-  { src: "/photos/bathroom-1.jpeg", alt: "Wash basin with mirror in an attached bathroom", category: "Bathrooms" },
-  { src: "/photos/bathroom-2.jpeg", alt: "Clean toilet in an attached bathroom", category: "Bathrooms" },
-  { src: "/photos/bathroom-3.jpeg", alt: "Toilet in an attached bathroom", category: "Bathrooms" },
-  { src: "/photos/common-area-1.jpeg", alt: "Study table and chair", category: "Common Areas" },
+  {
+    src: "/photos/ski-towers-single-room-erode.jpeg",
+    alt: "Single occupancy monthly room at SKI Towers in Erode, with seating area and window",
+    category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-single-room-bed-erode.jpeg",
+    alt: "Bed in a single room at SKI Towers, Erode",
+    category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-single-room-storage-erode.jpeg",
+    alt: "Storage cupboard in a single room at SKI Towers, Erode",
+    category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-single-room-bedding-erode.jpeg",
+    alt: "Bedding and linen in a single room at SKI Towers, Erode",
+    category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-double-room-erode.jpeg",
+    alt: "Double occupancy room at SKI Towers in Erode",
+    category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-wash-basin-erode.jpeg",
+    alt: "Wash basin with mirror in an attached bathroom at SKI Towers, Erode",
+    category: "Bathrooms",
+  },
+  {
+    src: "/photos/ski-towers-toilet-erode.jpeg",
+    alt: "Toilet in an attached bathroom at SKI Towers, Erode",
+    category: "Bathrooms",
+  },
+  {
+    src: "/photos/ski-towers-attached-bathroom-erode.jpeg",
+    alt: "Attached bathroom at SKI Towers, Erode",
+    category: "Bathrooms",
+  },
+  {
+    src: "/photos/ski-towers-study-table-erode.jpeg",
+    alt: "Study table and chair in the common area at SKI Towers, Erode",
+    category: "Common Areas",
+  },
 ];

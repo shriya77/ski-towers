@@ -12,6 +12,8 @@ import { RoomDetail } from "./pages/RoomDetail";
 import { Shops } from "./pages/Shops";
 import { GalleryPage } from "./pages/GalleryPage";
 import { Contact } from "./pages/Contact";
+import { NearRailwayStation } from "./pages/NearRailwayStation";
+import { StudentsProfessionals } from "./pages/StudentsProfessionals";
 import { NotFound } from "./pages/NotFound";
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
             <Route path="/shops" element={<Shops />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/near-erode-railway-station" element={<NearRailwayStation />} />
+            <Route path="/students-professionals" element={<StudentsProfessionals />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

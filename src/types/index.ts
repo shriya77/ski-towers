@@ -28,6 +28,12 @@ export interface Room {
   monthlyRate: number | null;
   amenities: Amenity[];
   images: RoomImage[];
+  /** SEO-optimized copy for the room detail page — deliberately longer/keyword-aware than `name`, which stays short for cards/UI. */
+  seo: {
+    title: Localized;
+    description: Localized;
+    heading: Localized;
+  };
 }
 
 export interface Shop {

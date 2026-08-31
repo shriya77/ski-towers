@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import { usePageMeta } from "../hooks/usePageMeta";
+import { useSEO } from "../hooks/useSEO";
+import { buildLodgingBusinessSchema, buildWebsiteSchema } from "../lib/seo";
 import { Hero } from "../components/Hero";
 import { QuickSummary } from "../components/QuickSummary";
 import { FeatureChecklist } from "../components/FeatureChecklist";
@@ -15,10 +16,15 @@ import { ContactSection } from "../components/ContactSection";
 export function Home() {
   const location = useLocation();
 
-  usePageMeta(
-    "Ski Towers Erode | Rooms & Accommodation in Erode",
-    "Ski Towers Erode offers single and double rooms for daily, weekly and monthly stays in Erode, Tamil Nadu. Walkable to Erode Railway Station. Book directly on WhatsApp."
-  );
+  const jsonLd = useMemo(() => [buildLodgingBusinessSchema(), buildWebsiteSchema()], []);
+
+  useSEO({
+    title: "SKI Towers | Monthly Rooms Near Erode Railway Station",
+    description:
+      "Looking for affordable monthly rooms near Erode Railway Station? SKI Towers offers clean single and double rooms for students and working professionals. Enquire today.",
+    path: "/",
+    jsonLd,
+  });
 
   useEffect(() => {
     if (location.hash) {

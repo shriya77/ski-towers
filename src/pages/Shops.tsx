@@ -1,15 +1,16 @@
-import { usePageMeta } from "../hooks/usePageMeta";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSEO } from "../hooks/useSEO";
 import { PageHeader } from "../components/PageHeader";
 import { ShopSection } from "../components/ShopSection";
 
 export function Shops() {
   const { t } = useLanguage();
 
-  usePageMeta(
-    "Shops & Commercial Spaces | Ski Towers Erode",
-    "Commercial spaces and shops available for rent at Ski Towers Erode. Enquire on WhatsApp for size, rent and availability."
-  );
+  useSEO({
+    title: `${t("shops.pageTitle")} | SKI Towers`,
+    description: t("shops.pageDescription"),
+    path: "/shops",
+  });
 
   return (
     <>
