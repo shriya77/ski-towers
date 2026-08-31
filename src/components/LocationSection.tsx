@@ -49,6 +49,7 @@ export function LocationSection() {
               </address>
 
               <p className="mt-3 text-sm font-medium text-accent">{t("hero.nearbyLandmark")}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{t("location.nearby")}</p>
 
               {hasMapsUrl && (
                 <Button
