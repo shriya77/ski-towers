@@ -79,20 +79,16 @@ export const rooms: Room[] = [
     ],
     images: [
       {
-        src: "/photos/ski-towers-single-room-erode.jpeg",
-        alt: "Single occupancy monthly room at SKI Towers in Erode, with seating area and window",
+        src: "/photos/ski-towers-single-room-wide-erode.jpeg",
+        alt: "Single occupancy monthly room at SKI Towers, Erode, with bed, wardrobe and window",
       },
       {
         src: "/photos/ski-towers-single-room-bed-erode.jpeg",
-        alt: "Bed in a single room at SKI Towers, Erode",
+        alt: "Bed in a single occupancy monthly room at SKI Towers, Erode",
       },
       {
-        src: "/photos/ski-towers-single-room-storage-erode.jpeg",
-        alt: "Storage cupboard in a single room at SKI Towers, Erode",
-      },
-      {
-        src: "/photos/ski-towers-single-room-bedding-erode.jpeg",
-        alt: "Bedding and linen in a single room at SKI Towers, Erode",
+        src: "/photos/ski-towers-single-room-erode.jpeg",
+        alt: "Single room at SKI Towers in Erode, with wash basin and window",
       },
     ],
   },
@@ -165,7 +161,7 @@ export const rooms: Room[] = [
     images: [
       {
         src: "/photos/ski-towers-double-room-erode.jpeg",
-        alt: "Double occupancy room at SKI Towers in Erode",
+        alt: "Double bed in a double occupancy monthly room at SKI Towers, Erode",
       },
     ],
   },

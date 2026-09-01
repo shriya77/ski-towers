@@ -7,43 +7,33 @@ import type { GalleryImage } from "../types";
  */
 export const galleryImages: GalleryImage[] = [
   {
-    src: "/photos/ski-towers-single-room-erode.jpeg",
-    alt: "Single occupancy monthly room at SKI Towers in Erode, with seating area and window",
+    src: "/photos/ski-towers-single-room-wide-erode.jpeg",
+    alt: "Single occupancy monthly room at SKI Towers, Erode, with bed, wardrobe and window",
     category: "Rooms",
   },
   {
     src: "/photos/ski-towers-single-room-bed-erode.jpeg",
-    alt: "Bed in a single room at SKI Towers, Erode",
+    alt: "Bed in a single occupancy monthly room at SKI Towers, Erode",
     category: "Rooms",
   },
   {
-    src: "/photos/ski-towers-single-room-storage-erode.jpeg",
-    alt: "Storage cupboard in a single room at SKI Towers, Erode",
-    category: "Rooms",
-  },
-  {
-    src: "/photos/ski-towers-single-room-bedding-erode.jpeg",
-    alt: "Bedding and linen in a single room at SKI Towers, Erode",
+    src: "/photos/ski-towers-single-room-erode.jpeg",
+    alt: "Single room at SKI Towers in Erode, with wash basin and window",
     category: "Rooms",
   },
   {
     src: "/photos/ski-towers-double-room-erode.jpeg",
-    alt: "Double occupancy room at SKI Towers in Erode",
+    alt: "Double bed in a double occupancy monthly room at SKI Towers, Erode",
     category: "Rooms",
+  },
+  {
+    src: "/photos/ski-towers-toilet-erode.jpeg",
+    alt: "Attached bathroom with toilet at SKI Towers, Erode",
+    category: "Bathrooms",
   },
   {
     src: "/photos/ski-towers-wash-basin-erode.jpeg",
     alt: "Wash basin with mirror in an attached bathroom at SKI Towers, Erode",
-    category: "Bathrooms",
-  },
-  {
-    src: "/photos/ski-towers-toilet-erode.jpeg",
-    alt: "Toilet in an attached bathroom at SKI Towers, Erode",
-    category: "Bathrooms",
-  },
-  {
-    src: "/photos/ski-towers-attached-bathroom-erode.jpeg",
-    alt: "Attached bathroom at SKI Towers, Erode",
     category: "Bathrooms",
   },
   {
