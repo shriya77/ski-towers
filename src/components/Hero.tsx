@@ -13,9 +13,9 @@ export function Hero() {
         <img
           src="/photos/ski-towers-building-erode.jpeg"
           alt="SKI Towers building in Erode"
-          className="h-full w-full object-cover brightness-[0.35] contrast-[1.05]"
+          className="h-full w-full object-cover brightness-[0.55] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/65 to-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/55 to-black/35" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16 pt-40 sm:px-8 sm:pb-24">
