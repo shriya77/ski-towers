@@ -7,6 +7,11 @@ import type { GalleryImage } from "../types";
  */
 export const galleryImages: GalleryImage[] = [
   {
+    src: "/photos/ski-towers-building-erode.jpeg",
+    alt: "SKI Towers building in Erode",
+    category: "Exterior",
+  },
+  {
     src: "/photos/ski-towers-single-room-wide-erode.jpeg",
     alt: "Single occupancy monthly room at SKI Towers, Erode, with bed, wardrobe and window",
     category: "Rooms",
