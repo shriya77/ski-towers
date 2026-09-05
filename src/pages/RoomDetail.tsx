@@ -108,8 +108,7 @@ export function RoomDetail() {
               <p className="mt-4 leading-relaxed text-muted">{description}</p>
 
               <div className="mt-6 overflow-hidden rounded-2xl border border-border">
-                <div className="grid grid-cols-3 divide-x divide-border bg-white text-center">
-                  <RateBlock label={t("rooms.daily")} value={room.dailyRate} />
+                <div className="grid grid-cols-2 divide-x divide-border bg-white text-center">
                   <RateBlock label={t("rooms.weekly")} value={room.weeklyRate} />
                   <RateBlock label={t("rooms.monthly")} value={room.monthlyRate} emphasize />
                 </div>

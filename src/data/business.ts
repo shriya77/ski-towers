@@ -10,13 +10,13 @@ export const business = {
   shortName: "Ski Towers",
   tagline: "Comfortable stays in Erode",
   supportingLine:
-    "Single and double rooms for daily, weekly and monthly stays. Walkable to Erode Railway Station.",
+    "Single and double rooms for weekly and monthly stays. Walkable to Erode Railway Station.",
 
   // Digits only, with country code, no + or spaces. e.g. "919876543210"
   whatsapp: "919790297204",
   // Display format, e.g. "+91 98765 43210"
   phone: "+91 97902 97204",
-  email: "",
+  email: "skitowers@gmail.com",
 
   addressLine1: "Thayumanava, Sundram Street",
   addressLine2: "Near Lotus Hospital, Housing Unit",

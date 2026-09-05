@@ -23,7 +23,6 @@ export interface Room {
   description: Localized;
   beds: Localized;
   suitableFor: Localized | null;
-  dailyRate: number | null;
   weeklyRate: number | null;
   monthlyRate: number | null;
   amenities: Amenity[];

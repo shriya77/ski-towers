@@ -31,7 +31,6 @@ export const translations = {
       scrollDown: "Scroll to learn more",
     },
     quickSummary: {
-      daily: "Daily Stays",
       weekly: "Weekly Stays",
       monthly: "Monthly Stays",
       singleDouble: "Single & Double Rooms",
@@ -50,8 +49,7 @@ export const translations = {
     rooms: {
       eyebrow: "Rooms & Rates",
       title: "Choose a single or double room",
-      description: "Simple, comfortable rooms for daily, weekly and monthly stays. Message us on WhatsApp to check availability.",
-      daily: "Daily",
+      description: "Simple, comfortable rooms for weekly and monthly stays. Message us on WhatsApp to check availability.",
       weekly: "Weekly",
       monthly: "Monthly",
       contactForRate: "Contact for rate",
@@ -137,7 +135,7 @@ export const translations = {
       pageDescription: "Affordable monthly accommodation in Erode for students and working professionals. Explore single and double rooms at SKI Towers.",
       h1: "Monthly Accommodation for Students & Working Professionals",
       breadcrumbLabel: "Students & Professionals",
-      intro: "SKI Towers offers single and double occupancy rooms on a daily, weekly or monthly basis — a practical option whether you're a student settling in near campus or a working professional who needs a place close to the station without a long lease.",
+      intro: "SKI Towers offers single and double occupancy rooms on a weekly or monthly basis — a practical option whether you're a student settling in near campus or a working professional who needs a place close to the station without a long lease.",
       studentsHeading: "For Students",
       studentsBody: "If you're studying in Erode and need an affordable place to stay, SKI Towers offers monthly rooms with a cot and mattress provided and 24-hour hot water. Single rooms suit those who prefer to stay alone, while double rooms work well if you're sharing with a friend to keep costs down. Being close to Erode Railway Station also makes it easy to travel home during breaks.",
       professionalsHeading: "For Working Professionals",
@@ -163,7 +161,7 @@ export const translations = {
       seoDescription: "Contact SKI Towers to enquire about room availability, monthly rates and accommodation near Erode Railway Station.",
     },
     footer: {
-      tagline: "Comfortable daily, weekly and monthly stays in Erode.",
+      tagline: "Comfortable weekly and monthly stays in Erode.",
       explore: "Explore",
       contact: "Contact",
       comingSoon: "Contact details coming soon",
@@ -221,7 +219,6 @@ export const translations = {
       scrollDown: "மேலும் பார்க்க கீழே ஸ்க்ரோல் செய்யுங்கள்",
     },
     quickSummary: {
-      daily: "தினசரி தங்குமிடம்",
       weekly: "வாரந்தோறும் தங்குமிடம்",
       monthly: "மாதந்தோறும் தங்குமிடம்",
       singleDouble: "சிங்கிள் & டபுள் ரூம்கள்",
@@ -240,8 +237,7 @@ export const translations = {
     rooms: {
       eyebrow: "ரூம்கள் & வாடகை",
       title: "சிங்கிள் அல்லது டபுள் ரூம் தேர்ந்தெடுங்கள்",
-      description: "தினசரி, வாரம், மாதம் தங்குவதற்கு எளிய, வசதியான ரூம்கள். இருப்பு உள்ளதா என்று வாட்ஸ்அப்பில் கேளுங்கள்.",
-      daily: "தினசரி",
+      description: "வாரம், மாதம் தங்குவதற்கு எளிய, வசதியான ரூம்கள். இருப்பு உள்ளதா என்று வாட்ஸ்அப்பில் கேளுங்கள்.",
       weekly: "வாரம்",
       monthly: "மாதம்",
       contactForRate: "விலைக்கு தொடர்பு கொள்ளுங்கள்",
@@ -327,7 +323,7 @@ export const translations = {
       pageDescription: "ஈரோட்டில் மாணவர்கள் மற்றும் வேலைக்குச் செல்பவர்களுக்கு மலிவான மாத தங்குமிடம். ஸ்கி டவர்ஸில் சிங்கிள் மற்றும் டபுள் ரூம்களைப் பாருங்கள்.",
       h1: "மாணவர்கள் & வேலைக்குச் செல்பவர்களுக்கான மாத தங்குமிடம்",
       breadcrumbLabel: "மாணவர்கள் & பணியாளர்கள்",
-      intro: "ஸ்கி டவர்ஸ் தினசரி, வாரம் அல்லது மாதம் என சிங்கிள் மற்றும் டபுள் ரூம்களை வழங்குகிறது — காலேஜ் அருகில் தங்க வேண்டிய மாணவராக இருந்தாலும், நீண்ட லீஸ் இல்லாமல் நிலையம் அருகில் ஒரு இடம் தேடும் பணியாளராக இருந்தாலும் இது ஏற்றது.",
+      intro: "ஸ்கி டவர்ஸ் வாரம் அல்லது மாதம் என சிங்கிள் மற்றும் டபுள் ரூம்களை வழங்குகிறது — காலேஜ் அருகில் தங்க வேண்டிய மாணவராக இருந்தாலும், நீண்ட லீஸ் இல்லாமல் நிலையம் அருகில் ஒரு இடம் தேடும் பணியாளராக இருந்தாலும் இது ஏற்றது.",
       studentsHeading: "மாணவர்களுக்கு",
       studentsBody: "ஈரோட்டில் படிக்கும் மாணவர்களுக்கு, ஸ்கி டவர்ஸ் காட் & மெத்தையுடன், 24 மணி நேர சூடு தண்ணீருடன் மாத ரூம்களை வழங்குகிறது. தனியாக தங்க விரும்புவோருக்கு சிங்கிள் ரூம், செலவைக் குறைக்க நண்பருடன் தங்க விரும்புவோருக்கு டபுள் ரூம் ஏற்றது. ஈரோடு ரயில் நிலையத்திற்கு அருகில் இருப்பதால் விடுமுறையில் ஊருக்குச் செல்வதும் எளிது.",
       professionalsHeading: "வேலைக்குச் செல்பவர்களுக்கு",
@@ -353,7 +349,7 @@ export const translations = {
       seoDescription: "ரூம் இருப்பு, மாத வாடகை மற்றும் ஈரோடு ரயில் நிலையம் அருகில் தங்குமிடம் பற்றி கேட்க ஸ்கி டவர்ஸை தொடர்பு கொள்ளுங்கள்.",
     },
     footer: {
-      tagline: "ஈரோட்டில் வசதியான தினசரி, வாரம், மாத தங்குமிடம்.",
+      tagline: "ஈரோட்டில் வசதியான வாரம், மாத தங்குமிடம்.",
       explore: "மேலும் பார்க்க",
       contact: "தொடர்பு",
       comingSoon: "தொடர்பு விவரங்கள் விரைவில் வரும்",
@@ -411,7 +407,6 @@ export const translations = {
       scrollDown: "और जानने के लिए नीचे स्क्रॉल करें",
     },
     quickSummary: {
-      daily: "रोज़ का ठहराव",
       weekly: "हफ़्ते का ठहराव",
       monthly: "महीने का ठहराव",
       singleDouble: "सिंगल और डबल कमरे",
@@ -430,8 +425,7 @@ export const translations = {
     rooms: {
       eyebrow: "कमरे और किराया",
       title: "सिंगल या डबल कमरा चुनें",
-      description: "रोज़, हफ्ते और महीने के हिसाब से रहने के लिए सिंपल, आरामदायक कमरे। खाली है या नहीं, व्हाट्सएप पर पूछें।",
-      daily: "रोज़",
+      description: "हफ्ते और महीने के हिसाब से रहने के लिए सिंपल, आरामदायक कमरे। खाली है या नहीं, व्हाट्सएप पर पूछें।",
       weekly: "हफ्ता",
       monthly: "महीना",
       contactForRate: "किराया जानने के लिए संपर्क करें",
@@ -517,7 +511,7 @@ export const translations = {
       pageDescription: "इरोड में स्टूडेंट्स और वर्किंग प्रोफेशनल्स के लिए किफ़ायती मासिक एकोमोडेशन। स्की टावर्स में सिंगल और डबल कमरे देखें।",
       h1: "स्टूडेंट्स और वर्किंग प्रोफेशनल्स के लिए मासिक एकोमोडेशन",
       breadcrumbLabel: "स्टूडेंट्स और प्रोफेशनल्स",
-      intro: "स्की टावर्स रोज़, हफ्ते या महीने के हिसाब से सिंगल और डबल कमरे देता है — चाहे आप कॉलेज के पास रहने वाले स्टूडेंट हों या बिना लंबे लीज़ के स्टेशन के पास जगह ढूंढ रहे प्रोफेशनल।",
+      intro: "स्की टावर्स हफ्ते या महीने के हिसाब से सिंगल और डबल कमरे देता है — चाहे आप कॉलेज के पास रहने वाले स्टूडेंट हों या बिना लंबे लीज़ के स्टेशन के पास जगह ढूंढ रहे प्रोफेशनल।",
       studentsHeading: "स्टूडेंट्स के लिए",
       studentsBody: "इरोड में पढ़ने वाले स्टूडेंट्स के लिए, स्की टावर्स कॉट और गद्दे के साथ, 24 घंटे गर्म पानी के साथ मासिक कमरे देता है। अकेले रहना पसंद करने वालों के लिए सिंगल कमरा, और खर्च कम करने के लिए दोस्त के साथ रहने वालों के लिए डबल कमरा सही है। इरोड रेलवे स्टेशन के पास होने से छुट्टियों में घर जाना भी आसान है।",
       professionalsHeading: "वर्किंग प्रोफेशनल्स के लिए",
@@ -543,7 +537,7 @@ export const translations = {
       seoDescription: "कमरे की उपलब्धता, मासिक दरें और इरोड रेलवे स्टेशन के पास ठहरने के बारे में जानने के लिए स्की टावर्स से संपर्क करें।",
     },
     footer: {
-      tagline: "इरोड में आरामदायक रोज़, हफ्ते और महीने का ठहराव।",
+      tagline: "इरोड में आरामदायक हफ्ते और महीने का ठहराव।",
       explore: "और देखें",
       contact: "संपर्क",
       comingSoon: "संपर्क जानकारी जल्द आ रही है",

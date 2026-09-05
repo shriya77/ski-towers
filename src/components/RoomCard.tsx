@@ -50,7 +50,6 @@ export function RoomCard({ room }: { room: Room }) {
         </div>
 
         <div className="mt-5 space-y-1.5 border-t border-border pt-4 text-sm">
-          <RateRow label={t("rooms.daily")} value={room.dailyRate} />
           <RateRow label={t("rooms.weekly")} value={room.weeklyRate} />
           <RateRow label={t("rooms.monthly")} value={room.monthlyRate} emphasize />
         </div>

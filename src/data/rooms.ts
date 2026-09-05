@@ -26,7 +26,6 @@ export const rooms: Room[] = [
     },
     beds: { en: "1 bed", ta: "1 படுக்கை", hi: "1 बेड" },
     suitableFor: { en: "1 guest", ta: "1 பேர்", hi: "1 व्यक्ति" },
-    dailyRate: null,
     weeklyRate: null,
     monthlyRate: 4000,
     seo: {
@@ -107,7 +106,6 @@ export const rooms: Room[] = [
     },
     beds: { en: "2 beds", ta: "2 படுக்கைகள்", hi: "2 बेड" },
     suitableFor: { en: "2 guests", ta: "2 பேர்", hi: "2 व्यक्ति" },
-    dailyRate: null,
     weeklyRate: null,
     monthlyRate: 5000,
     seo: {
